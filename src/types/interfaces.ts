@@ -15,12 +15,6 @@ export interface Statistics {
   value: number;
 }
 
-// enum category {
-//   FRONTEND = 'frontend',
-//   BACKEND = 'backend',
-//   TOOLS = 'tools'
-// }
-
 export type SkillCategory = "backend" | "frontend" | "tools";
 
 export interface Skill {

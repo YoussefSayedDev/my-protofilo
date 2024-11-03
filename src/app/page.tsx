@@ -12,7 +12,7 @@ export default function Home() {
     <>
       <Header />
       <MobileNav />
-      <main className="pt-32 container space-y-16 py-28 m-auto px-5 md:px-0 overflow-hidden">
+      <main className='pt-32 container space-y-16 py-28 m-auto px-5 md:px-0 overflow-hidden'>
         <HomeSection />
         <AboutSection />
         <SkillsSection />

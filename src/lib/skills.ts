@@ -3,7 +3,7 @@ import { Skill, SkillCategory } from "@/types/interfaces";
 
 export async function getSkills(category: SkillCategory) {
   const query = `
-    *[_type == 'skills' && category=='${category}'] {
+    *[_type == 'skills'] {
       _id,
       label,
       value,
@@ -12,7 +12,11 @@ export async function getSkills(category: SkillCategory) {
   `;
 
   const data = await client.fetch(query);
-  console.log("data skills", data);
 
-  return data as Skill[];
+  //  Filter by category
+  const finalData = data.filter(
+    (d: (typeof data)[0]) => d.category === category && d
+  );
+
+  return finalData as Skill[];
 }
